@@ -38,7 +38,7 @@ const Blog = () => {
           {blogPosts.map((post, index) => (
             <div
               key={index}
-              className="blog-card bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700"
+              className="blog-card   border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700"
             >
               <img
                 src={post.image}

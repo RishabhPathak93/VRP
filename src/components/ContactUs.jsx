@@ -6,7 +6,7 @@ const ContactUs = () => {
       <section className="contact_us bg-gray-100 py-24">
         <div className="container mx-auto">
           <div className="flex justify-center">
-            <div className="bg-white p-12 rounded-xl shadow-lg w-full max-w-6xl relative">
+            <div className="  p-12 rounded-xl shadow-lg w-full max-w-6xl relative">
               <div className="flex flex-wrap">
                 <div className="w-full md:w-3/5">
                   <div className="contact_form_inner">

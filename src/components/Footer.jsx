@@ -1,50 +1,52 @@
-import React from "react";
-import { FaFacebook, FaTwitter, FaGithub, FaLinkedin, FaInstagram, FaDiscord } from "react-icons/fa"; // Import icons
+import { FaTwitter, FaGithub, FaLinkedin, FaInstagram, FaDiscord } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-gray-900 w-full">
-      <div className="p-4 py-6 lg:py-8">
-        <div className="container mx-auto px-4 md:flex md:justify-between">
-          <div className="mb-6 md:mb-0">
+    <footer className="w-full text-white" style={{ background: 'linear-gradient(135deg, #2D336B, #001A6E)' }}>
+      <div className="container px-6 pt-8 pb-6 mx-auto">
+        <div className="md:flex md:justify-between">
+          {/* Logo section */}
+          <div className="mb-8 md:mb-0">
             <a href="https://flowbite.com/" className="flex items-center">
               <img
                 src="https://flowbite.com/docs/images/logo.svg"
-                className="h-8 me-3"
-                alt="FlowBite Logo"
+                className="h-8 mr-3"
+                alt="Flowbite Logo"
               />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                Flowbite
+              <span className="self-center text-2xl font-semibold text-white whitespace-nowrap">
+                Tridenzic
               </span>
             </a>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+
+          {/* Links grid */}
+          <div className="grid grid-cols-2 gap-8 sm:gap-10 sm:grid-cols-3">
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="mb-4 text-sm font-semibold text-white uppercase">
                 Resources
               </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                  <a href="https://flowbite.com/" className="hover:underline">
-                    Flowbite
+              <ul className="font-medium text-gray-400">
+                <li className="mb-3">
+                  <a href="https://flowbite.com/" className="transition-colors hover:text-white hover:underline">
+                    Tridenzic
                   </a>
                 </li>
                 <li>
-                  <a href="https://tailwindcss.com/" className="hover:underline">
+                  <a href="https://tailwindcss.com/" className="transition-colors hover:text-white hover:underline">
                     Tailwind CSS
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="mb-4 text-sm font-semibold text-white uppercase">
                 Follow us
               </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                <li className="mb-4">
+              <ul className="font-medium text-gray-400">
+                <li className="mb-3">
                   <a
                     href="https://github.com/themesberg/flowbite"
-                    className="hover:underline"
+                    className="transition-colors hover:text-white hover:underline"
                   >
                     Github
                   </a>
@@ -52,7 +54,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="https://discord.gg/4eeurUVvTy"
-                    className="hover:underline"
+                    className="transition-colors hover:text-white hover:underline"
                   >
                     Discord
                   </a>
@@ -60,17 +62,17 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="mb-4 text-sm font-semibold text-white uppercase">
                 Legal
               </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                  <a href="#" className="hover:underline">
+              <ul className="font-medium text-gray-400">
+                <li className="mb-3">
+                  <a href="#" className="transition-colors hover:text-white hover:underline">
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a href="#" className="transition-colors hover:text-white hover:underline">
                     Terms &amp; Conditions
                   </a>
                 </li>
@@ -78,45 +80,41 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <hr className="my-6 border-gray-200 dark:border-gray-700 lg:my-8" />
-        <div className="container mx-auto px-4 sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+
+        {/* Divider */}
+        <hr className="my-6 border-gray-700" />
+
+        {/* Bottom section */}
+        <div className="flex flex-row items-center justify-center gap-10 text-center">
+          <span className="text-sm text-gray-400">
             © 2023{" "}
             <a href="https://flowbite.com/" className="hover:underline">
-              Flowbite™
+              Tridenzic
             </a>
             . All Rights Reserved.
           </span>
-          <div className="flex mt-4 sm:justify-center sm:mt-0 space-x-5">
+
+          {/* Social icons */}
+          <div className="flex mt-4 space-x-6 sm:mt-0">
             <a
               href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="text-gray-400 transition-colors hover:text-white"
             >
-              <FaLinkedin className="w-5 h-5" aria-hidden="true" />
+              <FaLinkedin className="w-5 h-5" />
             </a>
+
             <a
               href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="text-gray-400 transition-colors hover:text-white"
             >
-              <FaInstagram className="w-5 h-5" aria-hidden="true" />
+              <FaDiscord className="w-5 h-5" />
             </a>
+
             <a
               href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="text-gray-400 transition-colors hover:text-white"
             >
-              <FaDiscord className="w-5 h-5" aria-hidden="true" />
-            </a>
-            <a
-              href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-            >
-              <FaTwitter className="w-5 h-5" aria-hidden="true" />
-            </a>
-            <a
-              href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-            >
-              <FaGithub className="w-5 h-5" aria-hidden="true" />
+              <FaGithub className="w-5 h-5" />
             </a>
           </div>
         </div>

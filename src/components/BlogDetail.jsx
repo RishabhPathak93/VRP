@@ -15,7 +15,7 @@ const BlogDetail = ({ match }) => {
     <div className="blog-detail py-16 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <motion.div
-          className="blog-detail-container bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700"
+          className="blog-detail-container   border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}

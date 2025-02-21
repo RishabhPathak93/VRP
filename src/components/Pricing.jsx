@@ -9,7 +9,7 @@ const Pricing = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Basic Plan */}
-          <div className="pricing-card w-full max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+          <div className="pricing-card w-full max-w-sm p-6   border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
             <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-4">
               Basic Plan
             </h3>
@@ -36,7 +36,7 @@ const Pricing = () => {
           </div>
 
           {/* Standard Plan */}
-          <div className="pricing-card w-full max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+          <div className="pricing-card w-full max-w-sm p-6   border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
             <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-4">
               Standard Plan
             </h3>
@@ -63,7 +63,7 @@ const Pricing = () => {
           </div>
 
           {/* Premium Plan */}
-          <div className="pricing-card w-full max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+          <div className="pricing-card w-full max-w-sm p-6   border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
             <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-4">
               Premium Plan
             </h3>
@@ -93,7 +93,7 @@ const Pricing = () => {
           </div>
 
           {/* Enterprise Plan */}
-          <div className="pricing-card w-full max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+          <div className="pricing-card w-full max-w-sm p-6   border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
             <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-4">
               Enterprise Plan
             </h3>
