@@ -60,7 +60,7 @@ const Navbar = () => {
         backdropFilter: 'blur(8px)'
       }}
     >
-      <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-2 mx-auto">
+      <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-1 mx-auto">
         <a href="/" className="z-20 flex items-center space-x-3">
           <div className="flex items-center justify-center w-10 h-10 rounded-full"
             style={{ background: 'linear-gradient(135deg, #2D336B, #001A6E)' }}>
@@ -76,7 +76,7 @@ const Navbar = () => {
         {/* Mobile Menu Toggle */}
         <button
           onClick={toggleMenu}
-          className="z-20 inline-flex items-center justify-center w-10 h-10 p-2 text-white rounded-lg md:hidden hover:bg-opacity-20 hover:bg-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+          className="z-20 inline-flex items-center justify-center w-10 h-10 text-white rounded-lg md:hidden hover:bg-opacity-20 hover:bg-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
           aria-controls="mega-menu-full"
           aria-expanded={menuOpen}
         >
