@@ -5,10 +5,13 @@ const About = () => {
   return (
     <div className="w-full min-h-screen px-6 py-16" 
       style={{ background: 'linear-gradient(135deg, #000957, #2D336B)' }}>
+      <div className="absolute inset-0 z-100">
+        
+      </div>
       
       {/* About Section */}
       <div 
-        className="flex flex-col items-center max-w-6xl gap-8 p-8 mx-auto border shadow-xl md:flex-row backdrop-blur-lg bg-white/10 rounded-xl border-white/20 md:p-16"
+        className="flex flex-col items-center max-w-6xl gap-8 p-8 mx-auto mt-6 border shadow-xl md:flex-row backdrop-blur-lg bg-white/10 rounded-xl border-white/20 md:p-16"
       >
         {/* Left Section */}
         <motion.div 

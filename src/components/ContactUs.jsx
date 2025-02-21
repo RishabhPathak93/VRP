@@ -1,72 +1,91 @@
-import React from 'react';
+'use client';
 
-const ContactUs = () => {
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { FaEnvelope, FaUser, FaPhone } from 'react-icons/fa';
+
+export default function ContactUs() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    // Add form submission logic
+  };
+
   return (
-    <div>
-      <section className="contact_us bg-gray-100 py-24">
-        <div className="container mx-auto">
-          <div className="flex justify-center">
-            <div className="  p-12 rounded-xl shadow-lg w-full max-w-6xl relative">
-              <div className="flex flex-wrap">
-                <div className="w-full md:w-3/5">
-                  <div className="contact_form_inner">
-                    <div className="contact_field">
-                      <h3 className="text-3xl font-semibold text-black mb-4">Contact Us</h3>
-                      <p className="text-sm text-gray-700 mb-8">Feel free to contact us anytime. We will get back to you as soon as possible!</p>
-                      <input
-                        type="text"
-                        className="form-control w-full p-4 border-b-2 border-gray-300 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Name"
-                      />
-                      <input
-                        type="email"
-                        className="form-control w-full p-4 border-b-2 border-gray-300 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Email"
-                      />
-                      <textarea
-                        className="form-control w-full p-4 border-b-2 border-gray-300 mb-6 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Message"
-                      ></textarea>
-                      <button className="w-full p-4 bg-gradient-to-tr from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:opacity-90 transition duration-300">
-                        Send
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div className="w-full md:w-2/5 mt-8 md:mt-0 md:pl-8">
-                  <div className="right_contact_social_icon flex flex-col items-center md:items-start">
-                    <div className="socil_item_inner flex space-x-6">
-                      <a href="#" className="text-3xl text-blue-600 hover:text-blue-800 transition duration-300">
-                        <i className="fab fa-facebook-square"></i>
-                      </a>
-                      <a href="#" className="text-3xl text-pink-600 hover:text-pink-800 transition duration-300">
-                        <i className="fab fa-instagram"></i>
-                      </a>
-                      <a href="#" className="text-3xl text-blue-400 hover:text-blue-600 transition duration-300">
-                        <i className="fab fa-twitter"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="contact_info_sec mt-10 bg-gray-800 text-white p-6 rounded-xl">
-                    <h4 className="text-xl font-semibold mb-4">Contact Info</h4>
-                    <div className="info_single flex items-center mb-4">
-                      <i className="fas fa-headset mr-4 text-lg"></i>
-                      <span className="text-sm">+91 9305508524</span>
-                    </div>
-                    <div className="info_single flex items-center mb-4">
-                      <i className="fas fa-envelope-open-text mr-4 text-lg"></i>
-                      <span className="text-sm">pathakrishabh962@gmail.com</span>
-                    </div>
-        
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div className="flex items-center justify-center min-h-screen p-6">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.5 }}
+        className="w-full max-w-lg p-8 text-white border border-gray-700 shadow-xl bg-white/10 backdrop-blur-lg rounded-2xl"
+      >
+        <h2 className="mb-6 text-3xl font-bold text-center">Contact Us</h2>
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div className="relative">
+            <FaUser className="absolute text-gray-400 transform -translate-y-1/2 left-4 top-1/2" />
+            <input 
+              type="text" 
+              name="name" 
+              placeholder="Your Name" 
+              value={formData.name} 
+              onChange={handleChange} 
+              className="w-full p-3 pl-12 bg-transparent border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
           </div>
-        </div>
-      </section>
+          <div className="relative">
+            <FaEnvelope className="absolute text-gray-400 transform -translate-y-1/2 left-4 top-1/2" />
+            <input 
+              type="email" 
+              name="email" 
+              placeholder="Your Email" 
+              value={formData.email} 
+              onChange={handleChange} 
+              className="w-full p-3 pl-12 bg-transparent border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div className="relative">
+            <FaPhone className="absolute text-gray-400 transform -translate-y-1/2 left-4 top-1/2" />
+            <input 
+              type="tel" 
+              name="phone" 
+              placeholder="Your Phone" 
+              value={formData.phone} 
+              onChange={handleChange} 
+              className="w-full p-3 pl-12 bg-transparent border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div>
+            <textarea 
+              name="message" 
+              placeholder="Your Message" 
+              value={formData.message} 
+              onChange={handleChange} 
+              rows="4"
+              className="w-full p-3 bg-transparent border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            ></textarea>
+          </div>
+          <button 
+            type="submit" 
+            className="w-full py-3 font-bold text-white transition duration-300 bg-blue-600 rounded-lg hover:bg-blue-700"
+          >
+            Send Message
+          </button>
+        </form>
+      </motion.div>
     </div>
   );
-};
-
-export default ContactUs;
+}

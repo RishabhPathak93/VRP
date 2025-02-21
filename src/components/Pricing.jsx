@@ -1,130 +1,117 @@
-import React from "react";
+import { motion } from "framer-motion";
+import TiltedCard from "./TiltedCard";
+import Ribbons from "../components/Ribbons";
 
 const Pricing = () => {
+  const pricingPlans = [
+    {
+      title: "Basic Plan",
+      price: "$499",
+      duration: "/project",
+      features: [
+        "Frontend Development",
+        "Backend Development",
+        "Basic Documentation",
+        "1 Month Support"
+      ],
+      gradient: "from-purple-500/20 via-blue-500/20 to-cyan-500/20",
+      image: "https://source.unsplash.com/600x400/?coding,technology"
+    },
+    {
+      title: "Standard Plan",
+      price: "$999",
+      duration: "/project",
+      features: [
+        "Frontend & Backend Development",
+        "Source Code Documentation",
+        "AIML Application",
+        "2 Months Support"
+      ],
+      gradient: "from-orange-500/20 via-red-500/20 to-purple-500/20",
+      image: "https://source.unsplash.com/600x400/?developer,software"
+    },
+    {
+      title: "Premium Plan",
+      price: "$1499",
+      duration: "/project",
+      features: [
+        "Complete Web & Mobile App",
+        "Advanced AIML Integration",
+        "End-to-End Testing",
+        "6 Months Support"
+      ],
+      gradient: "from-green-500/20 via-teal-500/20 to-blue-500/20",
+      image: "https://source.unsplash.com/600x400/?ai,technology"
+    }
+  ];
+
   return (
-    <div className="pricing-section py-16 bg-gray-50 dark:bg-gray-800">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-12">
-          Our Pricing Plans
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Basic Plan */}
-          <div className="pricing-card w-full max-w-sm p-6   border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
-            <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-4">
-              Basic Plan
-            </h3>
-            <div className="flex items-baseline text-gray-900 dark:text-white">
-              <span className="text-3xl font-semibold">$</span>
-              <span className="text-5xl font-extrabold tracking-tight">499</span>
-              <span className="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/project</span>
-            </div>
-            <ul className="space-y-5 my-7">
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">Frontend Development</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">Backend Development</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">Basic Documentation</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">1 Month Support</span>
-              </li>
-            </ul>
-            <button className="btn bg-blue-600 text-white w-full py-2 px-6 rounded-lg">Choose Plan</button>
-          </div>
+    <div className="min-h-screen px-4 py-16" style={{ background: 'linear-gradient(135deg, #000957, #2D336B)' }}>
+    <div className="absolute inset-0 z-100">
+        <Ribbons
+          baseThickness={30}
+          colors={['#00F5FF', '#B400FB', '#FC4A9E']}
+          speedMultiplier={0.5}
+          maxAge={500}
+          enableFade={false}
+          enableShaderEffect={true}
+        />
+      </div>
+      <div className="container mx-auto max-w-7xl">
+        <motion.h2 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-16 text-4xl font-extrabold text-center"
+        >
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+            Our Pricing Plans
+          </span>
+        </motion.h2>
 
-          {/* Standard Plan */}
-          <div className="pricing-card w-full max-w-sm p-6   border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
-            <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-4">
-              Standard Plan
-            </h3>
-            <div className="flex items-baseline text-gray-900 dark:text-white">
-              <span className="text-3xl font-semibold">$</span>
-              <span className="text-5xl font-extrabold tracking-tight">999</span>
-              <span className="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/project</span>
-            </div>
-            <ul className="space-y-5 my-7">
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">Frontend & Backend Development</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">Source Code Documentation</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">AIML Application</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">2 Months Support</span>
-              </li>
-            </ul>
-            <button className="btn bg-blue-600 text-white w-full py-2 px-6 rounded-lg">Choose Plan</button>
-          </div>
-
-          {/* Premium Plan */}
-          <div className="pricing-card w-full max-w-sm p-6   border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
-            <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-4">
-              Premium Plan
-            </h3>
-            <div className="flex items-baseline text-gray-900 dark:text-white">
-              <span className="text-3xl font-semibold">$</span>
-              <span className="text-5xl font-extrabold tracking-tight">1999</span>
-              <span className="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/project</span>
-            </div>
-            <ul className="space-y-5 my-7">
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">Complete MVP Development</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">Advanced AIML Solutions</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">Full Source Code Documentation</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">Unlimited Support</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">Deployment Assistance</span>
-              </li>
-            </ul>
-            <button className="btn bg-blue-600 text-white w-full py-2 px-6 rounded-lg">Choose Plan</button>
-          </div>
-
-          {/* Enterprise Plan */}
-          <div className="pricing-card w-full max-w-sm p-6   border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
-            <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-4">
-              Enterprise Plan
-            </h3>
-            <div className="flex items-baseline text-gray-900 dark:text-white">
-              <span className="text-3xl font-semibold">$</span>
-              <span className="text-5xl font-extrabold tracking-tight">4999</span>
-              <span className="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/project</span>
-            </div>
-            <ul className="space-y-5 my-7">
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">Custom Enterprise Solutions</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">Full Backend, Frontend, and API Development</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">Advanced AIML & AI Solutions</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">In-depth Documentation & Source Code</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">Unlimited Support & Maintenance</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-base text-gray-500 dark:text-gray-400 ms-3">Dedicated Project Manager</span>
-              </li>
-            </ul>
-            <button className="btn bg-blue-600 text-white w-full py-2 px-6 rounded-lg">Choose Plan</button>
-          </div>
-        </div>
+        <motion.div 
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {pricingPlans.map((plan, index) => (
+            <motion.div key={index} className="flex flex-col items-center">
+              <TiltedCard
+                captionText={plan.title}
+                containerHeight="300px"
+                containerWidth="100%"
+                imageHeight="300px"
+                imageWidth="100%"
+                rotateAmplitude={12}
+                scaleOnHover={1.1}
+                showMobileWarning={false}
+                showTooltip={true}
+                displayOverlayContent={true}
+                imageSrc={plan.image} 
+                overlayContent={
+                  <div className="w-full h-full p-6 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-[15px]">
+                    <h3 className="mb-2 text-xl font-semibold text-white">{plan.title}</h3>
+                    <p className="text-3xl font-extrabold text-white">{plan.price}
+                      <span className="text-xl font-normal text-gray-300"> {plan.duration}</span>
+                    </p>
+                    <ul className="mt-4 space-y-2 text-sm text-gray-300">
+                      {plan.features.map((feature, idx) => (
+                        <li key={idx}>• {feature}</li>
+                      ))}
+                    </ul>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-6 py-2 mt-4 text-sm text-white transition duration-300 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:shadow-lg hover:shadow-cyan-500/25"
+                    >
+                      Choose Plan
+                    </motion.button>
+                  </div>
+                }
+              />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </div>
   );

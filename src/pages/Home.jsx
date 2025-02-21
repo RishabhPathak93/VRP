@@ -3,11 +3,24 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import BusModel from "../components/BusModel"; // Ensure the path is correct
 import { Box } from "@react-three/drei";
+import Ribbons from "../components/Ribbons";
 
 const Home = () => {
   return (
-    <div className="flex items-center min-h-screen pt-16 md:pt-0" style={{ background: 'linear-gradient(to bottom, #000957, #0f1546)' }}>
-      <div className="container px-4 mx-auto max-w-7xl">
+    <div className="relative flex items-center min-h-screen pt-16 md:pt-0" style={{ background: 'linear-gradient(to bottom, #000957, #0f1546)' }}>
+      {/* Ribbons Animation Background */}
+      <div className="absolute inset-0 z-100">
+        <Ribbons
+          baseThickness={30}
+          colors={['#00F5FF', '#B400FB', '#FC4A9E']}
+          speedMultiplier={0.5}
+          maxAge={500}
+          enableFade={false}
+          enableShaderEffect={true}
+        />
+      </div>
+      
+      <div className="container relative z-10 px-4 mx-auto max-w-7xl">
         <div className="flex flex-col-reverse items-center gap-8 md:flex-row md:gap-16">
           {/* Left Text Section */}
           <section className="flex flex-col items-start w-full text-white md:w-1/2">
@@ -48,7 +61,6 @@ const Home = () => {
               >
                 Reduce operational costs and carbon footprint with our AI-powered route optimization and smart bins. Our intelligent waste management system ensures timely pickups, prevents overflowing waste, and maximizes efficiency.
               </motion.p>
-
             </motion.div>
 
             <motion.div
@@ -88,7 +100,6 @@ const Home = () => {
                 <BusModel />
               </Suspense>
             </Canvas>
-
           </motion.section>
         </div>
       </div>

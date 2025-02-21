@@ -13,6 +13,7 @@ import Signup from "./pages/Signup"; // Import Signup component
 const App = () => {
   return (
     <div className="relative min-h-screen">
+    
       <Router>
         <Navbar />
         <main>

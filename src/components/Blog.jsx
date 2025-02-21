@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import TiltedCard from "./TiltedCard";
 
@@ -57,6 +56,9 @@ const Blog = () => {
   return (
     <div className="min-h-screen px-4 py-16" 
       style={{ background: 'linear-gradient(135deg, #000957, #2D336B)' }}>
+      <div className="absolute inset-0 z-100">
+     
+      </div>
       <div className="container mx-auto max-w-7xl">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
