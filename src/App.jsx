@@ -7,12 +7,12 @@ import Pricing from "./components/Pricing";
 import Blog from "./components/Blog";
 import Footer from "./components/Footer";
 import BlogDetail from "./components/BlogDetail";
+import Login from "./components/Login"; // Import Login component
+import Signup from "./components/Signup"; // Import Signup component
 
 const App = () => {
   return (
     <div className="relative min-h-screen">
-      {/* Background Div */}
-
       <Router>
         <Navbar />
         <main>
@@ -23,6 +23,8 @@ const App = () => {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogDetail />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/login" element={<Login />} />  {/* Login Page */}
+            <Route path="/signup" element={<Signup />} />  {/* Signup Page */}
           </Routes>
         </main>
         <Footer />

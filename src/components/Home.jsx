@@ -49,11 +49,6 @@ const Home = () => {
                 Reduce operational costs and carbon footprint with our AI-powered route optimization and smart bins. Our intelligent waste management system ensures timely pickups, prevents overflowing waste, and maximizes efficiency.
               </motion.p>
 
-              <ul className="space-y-2 text-gray-200 list-none">
-                <li>🔹 Reduce Fuel Costs with Smart Routing</li>
-                <li>🔹 Prevent Waste Overflow with Sensor-Based Smart Bins</li>
-                <li>🔹 Sustainable Cities with Optimized Waste Collection</li>
-              </ul>
             </motion.div>
 
             <motion.div
@@ -65,14 +60,14 @@ const Home = () => {
               <a
                 href="/sign-up/"
                 className="inline-block font-medium text-white text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-lg transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px]"
-                aria-label="Book a demo"
+                aria-label="Get a demo"
                 style={{
                   background: 'linear-gradient(90deg, #2D336B, #001A6E)',
                   boxShadow: '0 4px 10px rgba(0,9,87,0.3)',
                   border: '1px solid rgba(255,255,255,0.1)'
                 }}
               >
-                Book a demo
+                Get a demo
               </a>
             </motion.div>
           </section>

@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
+import { UserCircle, ShieldCheck } from "lucide-react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [extraDropdownOpen, setExtraDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [userDropdownOpen, setUserDropdownOpen] = useState(false);
+  const [adminDropdownOpen, setAdminDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +37,16 @@ const Navbar = () => {
   const toggleExtraDropdown = () => {
     setExtraDropdownOpen(!extraDropdownOpen);
     if (dropdownOpen) setDropdownOpen(false);
+  };
+
+  const toggleUserDropdown = () => {
+    setUserDropdownOpen(!userDropdownOpen);
+    if (adminDropdownOpen) setAdminDropdownOpen(false);
+  };
+
+  const toggleAdminDropdown = () => {
+    setAdminDropdownOpen(!adminDropdownOpen);
+    if (userDropdownOpen) setUserDropdownOpen(false);
   };
 
   return (
@@ -261,20 +274,71 @@ const Navbar = () => {
             </li>
           </ul>
 
-          {/* "Get Started" Button */}
-          <button
-            className="px-6 py-3 mt-3 ml-0 text-base font-semibold text-white rounded-lg md:mt-0 md:ml-4 transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px]"
-            style={{
-              background: 'linear-gradient(90deg, #2D336B, #001A6E)',
-              boxShadow: '0 4px 10px rgba(0,9,87,0.3)',
-              border: '1px solid rgba(255,255,255,0.1)'
-            }}
-          >
-            <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-          </button>
+          {/* Avatar Buttons Container */}
+          <div className="flex items-center gap-2 mt-3 ml-0 md:mt-0 md:ml-4">
+            {/* User Avatar Button */}
+            <div className="relative">
+              <button
+                onClick={toggleUserDropdown}
+                className="flex items-center justify-center w-10 h-10 transition-all duration-300 rounded-full hover:shadow-lg hover:translate-y-[-2px] focus:outline-none"
+                style={{
+                  background: 'linear-gradient(90deg, #2D336B, #001A6E)',
+                  boxShadow: '0 2px 6px rgba(0,9,87,0.3)',
+                  border: '1px solid rgba(255,255,255,0.1)'
+                }}
+              >
+                <UserCircle className="w-6 h-6 text-white" />
+              </button>
+              {userDropdownOpen && (
+                <div className="absolute right-0 z-10 w-48 mt-2 overflow-hidden rounded-lg shadow-lg animate-fadeIn"
+                  style={{
+                    background: 'rgba(0, 9, 87, 0.97)',
+                    backdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(255,255,255,0.1)'
+                  }}>
+                  <a href="/login" className="block px-4 py-2 text-sm text-white hover:bg-white hover:bg-opacity-10">
+                    Login
+                  </a>
+                  <a href="/signup" className="block px-4 py-2 text-sm text-white hover:bg-white hover:bg-opacity-10">
+                    Sign Up
+                  </a>
+                </div>
+              )}
+            </div>
+
+            {/* Admin Avatar Button */}
+            <div className="relative">
+              <button
+                onClick={toggleAdminDropdown}
+                className="flex items-center justify-center w-10 h-10 transition-all duration-300 rounded-full hover:shadow-lg hover:translate-y-[-2px] focus:outline-none"
+                style={{
+                  background: 'linear-gradient(90deg, #4B0082, #800080)',
+                  boxShadow: '0 2px 6px rgba(75,0,130,0.3)',
+                  border: '1px solid rgba(255,255,255,0.1)'
+                }}
+              >
+                <ShieldCheck className="w-6 h-6 text-white" />
+              </button>
+              {adminDropdownOpen && (
+                <div className="absolute right-0 z-10 w-48 mt-2 overflow-hidden rounded-lg shadow-lg animate-fadeIn"
+                  style={{
+                    background: 'rgba(75, 0, 130, 0.97)',
+                    backdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(255,255,255,0.1)'
+                  }}>
+                  <a href="/admin/dashboard" className="block px-4 py-2 text-sm text-white hover:bg-white hover:bg-opacity-10">
+                    Admin Dashboard
+                  </a>
+                  <a href="/admin/settings" className="block px-4 py-2 text-sm text-white hover:bg-white hover:bg-opacity-10">
+                    Settings
+                  </a>
+                  <a href="/admin/logout" className="block px-4 py-2 text-sm text-white hover:bg-white hover:bg-opacity-10">
+                    Logout
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </nav>

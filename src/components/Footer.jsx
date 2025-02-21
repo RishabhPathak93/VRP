@@ -3,7 +3,7 @@ import { FaTwitter, FaGithub, FaLinkedin, FaInstagram, FaDiscord } from "react-i
 const Footer = () => {
   return (
     <footer className="w-full text-white" style={{ background: 'linear-gradient(135deg, #2D336B, #001A6E)' }}>
-      <div className="container px-6 pt-8 pb-6 mx-auto">
+      <div className="container px-6 pt-4 pb-3 mx-auto">
         <div className="md:flex md:justify-between">
           {/* Logo section */}
           <div className="mb-8 md:mb-0">
