@@ -1,0 +1,9 @@
+streamlit
+pandas
+folium
+openrouteservice
+streamlit_folium
+osmnx
+geopandas
+numpy
+matplotlib
